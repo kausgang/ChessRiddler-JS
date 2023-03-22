@@ -29,7 +29,7 @@ router.post("/", function (req, res, next) {
   // console.log(pgn, history, blunder_threshold);
 
   //  insert into game table
-  data = [new Date(), pgn];
+  data = [new Date().toLocaleString(), pgn];
 
   let db = new sqlite3.Database("public/DB/DB.db");
   db.run(
@@ -44,6 +44,8 @@ router.post("/", function (req, res, next) {
     }
   );
   db.close();
+
+  res.send("done");
 });
 
 module.exports = router;

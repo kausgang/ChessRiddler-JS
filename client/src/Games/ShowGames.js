@@ -18,14 +18,14 @@ function ShowGames(props) {
   useEffect(() => {
     setRows(
       props.games.map((element) => (
-        <li key={element[0]} onClick={onClickGame}>
+        <li key={element.id} onClick={onClickGame}>
           <Button
             variant="text"
-            data-pgn={element[2]}
+            data-pgn={element.pgn}
             // data-moveplayed={element[2]}
             // data-bestmove={element[3]}
           >
-            {element[1]}
+            {element.date_played}
           </Button>
 
           <hr />
