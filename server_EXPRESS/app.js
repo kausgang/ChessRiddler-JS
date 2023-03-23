@@ -5,7 +5,7 @@ var logger = require("morgan");
 const sqlite3 = require("sqlite3").verbose();
 
 var cors = require("cors");
-const { Chess } = require("chess.js");
+
 var engine = require("stockfish");
 
 // var indexRouter = require("./routes/index");
@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.locals.engine = engine();
+// app.locals.engine = engine();
 
 // create the database and tables
 let db = new sqlite3.Database("public/DB/DB.db");
